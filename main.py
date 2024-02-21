@@ -8,7 +8,6 @@ from pydantic import BaseModel
 from datetime import datetime
 
 from tweety import Twitter
-import emoji
 
 app = FastAPI()
 
@@ -23,10 +22,6 @@ classifier_2 = pipeline(
 
 class Sentences(BaseModel):
     sentences: List[str]
-
-
-def convert_emojis_to_text(text):
-    return emoji.demojize(text)
 
 
 emoji_library = {
